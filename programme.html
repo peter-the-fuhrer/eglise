@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iSolution</title>
+    <script type="text/javascript" src="./tailwind.js"></script>
+    <!-- <link rel="stylesheet" type="text/font" href="./files/poppins.ttf"> -->
+    <link rel="stylesheet" href="./files//font-awesome/all.min.css" />
+    <link rel="stylesheet" href="./files/aos.css" />
+    <script src="./files/aos.js"></script>
+    <link rel="shortcut icon" href="./files/logo.PNG" />
+    <style type="text/css">
+      /*@import("./files/roboto.ttf");*/
+      /*@import("./files/verdana.ttf");*/
+      :root {
+        --primary: #ff3b0a;
+        --sixty: #f0f3f2;
+      }
+      th{
+        color: white;
+        background-color: var(--primary);
+      }
+      .left{
+        border-radius: 12px 0 0 0;
+
+      }
+      .right{
+        border-radius: 0 12px 0 0;
+      }
+      th,td,tr{
+        padding: .5rem 0;
+      }
+      td:hover{
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+
+      }
+      table,th,td,tr{
+        border: 3px solid var(--sixty);
+      }
+      table{
+        border-radius: 12px;
+      }
+      .trans {
+        transition: all;
+        transition-duration: 0.2s;
+      }
+      li {
+        padding: 7px;
+        border-radius: 5px;
+      }
+      li.programme {
+        list-style: inside;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--sixty);
+      }
+      #home {
+        /* background-image: url("./files/workbench.jpg"); */
+        background-position: center;
+        /* padding-top: calc(60px + 1rem); */
+      }
+      #Service,
+      #about {
+        /* background-image: url("./files/hotel.jpg"); */
+        background-position: center;
+        padding-top: calc(60px + 1rem);
+      }
+      li.active {
+        color: var(--primary);
+        position: relative;
+      }
+      /* li.active::after {
+        content: "";
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        height: 4px;
+        border-radius: 5px;
+        background-color: var(--primary);
+        left: 50%;
+        transform: translateX(-50%);
+      } */
+      @media screen AND (max-width: 810px) {
+        .android ul a{
+          padding:10px 0;
+          /* background-color: #00ffff; */
+        }
+        .android ul a:hover{
+          background-color: var(--sixty);
+          border-radius: 8px;
+        }
+        .android ul li{
+          margin: 0 auto;
+          width: 140px;
+          position: relative;
+          border-radius: 0;
+        }
+        .android ul{
+          padding: 5px;
+          border-radius: 8px;
+        }
+        .close{
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, .4);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="home" class="flex flex-col min-h-screen">
+      <!-- Android -->
+      <div
+        class="android menu flex top-0 transition-all z-50 mt-2 w-full h-[60px] items-center px-3 min-[811px]:hidden justify-between"
+      >
+        <div class="logo relative">
+          <img src="./files/logo.png" class="h-full max-h-[50px]" alt="" />
+        </div>
+        <div class="links max-[810px]:h-screen max-[810px]:left-0 max-[810px]:top-0 max-[810px]:bg-[rgba(0,0,0,.4)] max-[810px]:justify-center max-[810px]:items-center max-[810px]:w-screen  max-[810px]:flex-row max-[810px]:fixed min-[811px]:hidden hidden">
+          <ul class="flex  max-[389px]:mr-[10px]  max-[389px]:ml-[10px] max-[389px]:w-[100%] max-[519px]:w-[312px] relative max-[810px]:bg-white max-[810px]:space-x-0 max-[810px]:w-[60%] max-[810px]:flex-col space-x-2">
+            <a href="index.html">
+              <li
+                class=" font-semibold b hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-home"></i> Accueil
+              </li>
+            </a>
+            <a href="event.html">
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-wrench"></i> Evenements
+              </li>
+            </a>
+            <a href="programme.html">
+              <li
+                class="active font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-calendar"></i> Programme
+              </li>
+            </a>
+            <a href="javascript:void;" id="contact">
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-envelope"></i> Contact Nous
+              </li></a
+            >
+            <a href="javascript:void;" id="donate"
+              ><i></i>
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-donate"></i> Donate
+              </li>
+            </a>
+          <div class="close max-[389px]:right-0 max-[389px]:-top-12 absolute -top-8 -right-8">
+            <i class="fa fa-x text-white"></i>
+          </div>
+          </ul>
+        </div>
+        
+        <div class="monster cursor-pointer hidden max-[810px]:block">
+          <i onclick="" class="fas fa-bars-staggered"></i>
+        </div>
+      </div>
+        <!-- Pc -->
+      <div
+        class="menu max-[810px]:hidden top-0 transition-all z-50 mt-2 w-full h-[60px] items-center px-3 flex justify-between"
+      >
+        <div class="logo relative">
+          <img src="./files/logo.png" class="h-full max-h-[50px]" alt="" />
+        </div>
+        <div class="links">
+          <ul class="flex space-x-2">
+            <a href="index.html">
+              <li
+                class=" font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-home"></i> Accueil
+              </li>
+            </a>
+            <a href="event.html">
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-wrench"></i> Evenements
+              </li>
+            </a>
+            <a href="programme.html">
+              <li
+                class="active font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-calendar"></i> Programme
+              </li>
+            </a>
+            <a href="javascript:void;" id="contact">
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-envelope"></i> Contact Nous
+              </li></a
+            >
+            <a href="javascript:void;" id="donate"
+              ><i></i>
+              <li
+                class="font-semibold hover:text-[var(--primary)] transition-colors"
+              >
+                <i class="fa fa-donate"></i> Donate
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div>
+          <a href="login_form.php"><button class="bg-[var(--primary)] py-2 rounded-2xl font-semibold text-white hover:bg-orange-600 px-5">Login</button></a></div>
+      </div>
+      <div
+        class="content h-full grid grid-cols-[600px] max-[600px]:grid-cols-[1fr] justify-center w-full pt-4"
+      >
+        <div class="item p-4 space-y-4">
+          <h1 class="text-center text-slate-900 font-semibold block text-4xl">
+            Programme De l'Eglise
+          </h1>
+          <table class="w-full bg-white  text-center">
+            <tr class="rounded-lg">
+            <th class="left">Jours</th>
+            <th class="right">Activité</th></tr>
+            <tr>
+              <td rowspan="3" class="font-semibold" >Lundi</td>
+              <td >1<sup>er</sup> Culte de 6h00 - 8h00</td>
+            </tr>
+            <tr>
+              
+              <td  >1<sup>er</sup> Culte de 6h00 - 8h00</td>
+            </tr>
+            <tr>
+              <td  >1<sup>er</sup> Culte de 6h00 - 8h00</td>
+            </tr>
+            <tr>
+              <td rowspan="3"  class="font-semibold">Mardi</td>
+              <td>1<sup>er</sup> Culte de 6h00 - 8h00</td></tr>
+          </table>
+        </div>
+      </div>
+      <div
+      onclick=""
+      class="donate  top-0 hidden overflow-y-auto max-[466px]:px-2 z-[51] grid justify-center items-center fixed w-screen h-screen bg-[rgba(0,0,0,.4)]"
+    >
+      <div
+        class="card max-[466px]:h-auto  max-[466px]:w-full trans -top-[50%] relative bg-white w-[450px] space-y-2 h-[230px] rounded-lg p-4"
+      >
+         
+        <i class="fa fa-x absolute right-4 top-4 donx cursor-pointer"></i>
+        <h1 class="text-center text-3xl font-bold"><i class="fa fa-donate"></i> Donate</h1>
+        <p>
+          If you want to support us in worshiping you can send donation using
+          Lumicash on This Number : <b>+257 xx xx xx xx</b> the name is
+          <b>Monster Job</b> or By Using Ihela on <b>+257 xx xx xx xx</b> the
+          is <b>Monster Yobu</b>.
+        </p>
+        <p>Thanks For Your Donation.</p>
+      </div>
+    </div>
+    <div
+      onclick=""
+      class="contact  top-0 hidden overflow-y-auto max-[466px]:px-2 z-[51] grid justify-center items-center fixed w-screen h-screen bg-[rgba(0,0,0,.4)]"
+    >
+      <div
+        class="contact-card   max-[466px]:h-auto  max-[466px]:w-full trans -top-[50%] relative bg-white w-[450px] space-y-2 h-[230px] rounded-lg p-4"
+      >
+        <i class="fa fa-x absolute right-4 top-4 contactx cursor-pointer"></i>
+        <h1 class="text-center text-3xl font-bold"><i class="fa fa-envelope"></i> Contact Nous</h1>
+        <p>
+          You Can find us through phone number on :
+          <b>+257 xx xx xx xx</b> or Mail us on <a href="mailto:email.com" class="text-[var(--primary)]">email.com</a> or again find us on our social media accounts :
+        </p>
+        <p>
+          <ul class="flex items-center justify-center">
+            <a href="#" class="hover:text-[var(--primary)]"><li><i class="fa-brands fa-facebook"></i> Facebook</li></a>
+            <a href="#" class="hover:text-[var(--primary)]"><li><i class="fa-brands fa-instagram"></i> Instagram</li></a>
+            <a href="#" class="hover:text-[var(--primary)]"><li><i class="fa-brands fa-youtube"></i> Youtube</li></a>
+            <a href="#" class="hover:text-[var(--primary)]"><li><i class="fa-brands fa-whatsapp"></i> Whatsapp</li></a>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="flex-1 flex pt-4 items-end">
+      <div class="footer p-2 justify-center relative bottom-0 bg-slate-900 w-full">
+        <p class="text-slate-300 text-center">Contact us on <b>+257 xx xx xx xx</b></p>
+        <p class="text-slate-300 text-center">Or</p>
+        <div class="text-slate-300 items-center text-center flex justify-center w-full">
+        <p class="text-slate-300 text-center">Find Us On :</p>
+        
+         
+        <ul class="flex ml-2 space-x-2">
+          <a href="#" class="w-[40px] h-[40px] flex justify-center hover:border-[var(--primary)] hover:text-[var(--primary)] items-center rounded-full border-slate-300 border"><li><i class="fa-brands fa-facebook"></i></li></a>
+          <a href="#" class="w-[40px] h-[40px] flex justify-center hover:border-[var(--primary)] hover:text-[var(--primary)] items-center rounded-full border-slate-300 border"><li><i class="fa-brands fa-instagram"></i></li></a>
+          <a href="#" class="w-[40px] h-[40px] flex justify-center hover:border-[var(--primary)] hover:text-[var(--primary)] items-center rounded-full border-slate-300 border"><li><i class="fa-brands fa-youtube"></i></li></a>
+          <a href="#" class="w-[40px] h-[40px] flex justify-center hover:border-[var(--primary)] hover:text-[var(--primary)] items-center rounded-full border-slate-300 border"><li><i class="fa-brands fa-whatsapp"></i></li></a>
+        </ul>
+        </div>
+        <div class="developer p-2">
+          <p class="text-blue-500 font-semibold text-center"><a href="login_form.php">Admin Login</a></p>
+          <p class="text-slate-300 text-center"><b>iSolution &copy; <script>document.write(new Date().getFullYear())</script> All Right Reserved.</b></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+  <script>
+    AOS.init();
+    const card = document.querySelector(".donate .card");
+    const donate = document.querySelector(".donate");
+    var li = document.querySelectorAll(".menu li");
+    const menu = document.querySelectorAll(".menu");
+    var a = 0;
+
+
+    document.addEventListener("scroll", () => {
+      if (window.scrollY >= 8) {
+        menu.forEach(item=>item.classList.add("sticky"))
+        menu.forEach(item=>item.classList.add("mt-0"))
+        menu.forEach(item=>item.classList.add("bg-white"))
+        // li.forEach((item) => {
+        //   item.classList.remove("text-white");
+        // });
+      } else {
+        menu.forEach(item=>item.classList.remove("sticky"))
+        menu.forEach(item=>item.classList.remove("mt-0"))
+        menu.forEach(item=>item.classList.remove("bg-white"))
+        // li.forEach((item) => {
+        //   item.classList.add("text-white");
+        // });
+      }
+    });
+    donate.addEventListener("click", (e) => {
+      if (e.target == donate) {
+        // donate.setAttribute("data-aos", "fade-down");
+
+        card.style.top = "-70%";
+        setTimeout(() => {
+          donate.classList.add("hidden");
+        donate.style.overflowY = "";
+        document.documentElement.style.overflowY = "";
+        }, 200);
+      }
+    });
+    const dlink = document.querySelectorAll("#donate");
+    dlink.forEach(item=>{
+      item.addEventListener("click", (e) => {
+      donate.classList.remove("hidden");
+      document.documentElement.style.overflowY = "hidden";
+      donate.style.overflowY = "auto";
+      setTimeout(() => {
+        card.style.top = "0px";
+      }, 1);
+    });
+    })
+    // contact 
+    const contactcard = document.querySelector(".contact .contact-card");
+    const contact = document.querySelector(".contact");
+    var li = document.querySelectorAll(".menu li");
+    var close = document.querySelector(".contactx");
+    close.addEventListener("click", () => {
+      contactcard.style.top = "-70%";
+      setTimeout(() => {
+        contact.classList.add("hidden");
+        contact.style.overflow = "";
+        document.documentElement.style.overflowY = "";
+      }, 200);
+    });
+
+    contact.addEventListener("click", (e) => {
+      if (e.target == contact) {
+        contactcard.style.top = "-70%";
+        setTimeout(() => {
+          contact.classList.add("hidden");
+          contact.style.overflow = "";
+          document.documentElement.style.overflowY = "";
+        }, 200);
+      }
+    });
+    const clink = document.querySelectorAll("#contact");
+    clink.forEach((item)=>{
+      item.addEventListener("click", (e) => {
+      contact.classList.remove("hidden");
+      contact.style.overflow = "";
+      document.documentElement.style.overflowY = "hidden";
+      setTimeout(() => {
+        contactcard.style.top = "0px";
+      }, 1);
+    });
+    })
+    // responsive
+    const clo=document.querySelector('.close')
+    const menua=document.querySelector(".android .links");
+    const open=document.querySelector(".monster");
+    open.addEventListener('click',()=>{
+        menua.classList.remove('hidden')
+        menua.classList.add('flex')
+      })
+    menua.addEventListener('click',(e)=>{
+      if (e.target==menua) {
+        menua.classList.add('hidden')
+        menua.classList.remove('flex')
+      }
+      })
+    const android=document.querySelectorAll('.android .links ul a');
+    android.forEach((item)=>{
+      item.addEventListener('click',()=>{
+        menua.classList.add('hidden')
+        menua.classList.remove('flex')
+      })
+    })
+      clo.addEventListener('click',()=>{
+        menua.classList.add('hidden')
+        menua.classList.remove('flex')
+      })
+  </script>
+</html>
